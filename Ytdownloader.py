@@ -21,7 +21,7 @@ def args():
         if param in commands:
             command = commands[commands.index(param)]
             if command == "--help":
-                parameter = None
+                parameter = "None"
             else:
                 parameter = argLine[argLine.index(param) + 1]
 
@@ -32,26 +32,24 @@ def args():
 
 argsFromCLine = args()
 downloads_path = "downloads/"
+print(argsFromCLine)
 
-if argsFromCLine.get('--loc') != None:
+if '--loc' in argsFromCLine.keys():
     downloads_path = argsFromCLine.get('--loc')
-
-print(downloads_path)
-
-
 
 
 class YtDownloader:
     def __init__(self):
         try:
-            if argsFromCLine.get('--help'):
-                self.help()
+            if '--help' in argsFromCLine.keys():
+                print(self.help())
                 exit()
-            location = downloads_path
-            link = argsFromCLine.get('--link')
-            res = argsFromCLine.get('--res')
-            filetypee = argsFromCLine.get('--filetype')
-            self.download(link=link, resolution=res, location=location, fileType=filetypee)
+            else:
+                location = downloads_path
+                link = argsFromCLine.get('--link')
+                res = argsFromCLine.get('--res')
+                filetypee = argsFromCLine.get('--filetype')
+                self.download(link=link, resolution=res, location=location, fileType=filetypee)
         except Exception as err:
             print(f'error: {err}')
 
