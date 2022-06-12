@@ -32,7 +32,6 @@ def args():
 
 argsFromCLine = args()
 downloads_path = "downloads/"
-print(argsFromCLine)
 
 if '--loc' in argsFromCLine.keys():
     downloads_path = argsFromCLine.get('--loc')
