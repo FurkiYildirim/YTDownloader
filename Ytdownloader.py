@@ -44,11 +44,13 @@ print(downloads_path)
 class YtDownloader:
     def __init__(self):
         try:
+            if argsFromCLine.get('--help'):
+                self.help()
+                exit()
             location = downloads_path
             link = argsFromCLine.get('--link')
             res = argsFromCLine.get('--res')
             filetypee = argsFromCLine.get('--filetype')
-            print(link, res, filetypee)
             self.download(link=link, resolution=res, location=location, fileType=filetypee)
         except Exception as err:
             print(f'error: {err}')
