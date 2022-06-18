@@ -67,9 +67,9 @@ class YtDownloader:
         
         TXT Dosya formatı
         örnek:
-        link | type(mp4/mp3)| resolution(high/low)
-        link | type(mp4/mp3)| resolution(high/low)
-        link | type(mp4/mp3)| resolution(high/low)
+        link | mp4/mp3| high/low
+        link | mp4/mp3| high/low
+        link | mp4/mp3| high/low
 
         [EN]
         coming soon
