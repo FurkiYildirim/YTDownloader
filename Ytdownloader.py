@@ -9,6 +9,8 @@ def args():
     --link
     --help
     --setname
+    --filetype
+    --loc
 
     """
     commands = ['--help', '--link', '--loc', '--res', '--filetype']
